@@ -7,43 +7,26 @@ class Todoitem extends Component {
    getStyle = () => {
       return {
          textDecoration: this.props.todo.completed ? 'line-through' : 'none',
-         background: '#f4f4f4',
          padding: '10px',
-         borderBottom: '1px #ccc dotted'
+         borderBottom: '1px #ccc solid'
       }
    };
 
-   // Renders the component in our browser
    render() {
-
       const {id, title} = this.props.todo;
       return (
-         <div style={this.getStyle()}>
-            <p>
-               <input type="checkbox" onChange={this.props.toggleComplete.bind(this, id)}/> {'  '}
-               {title}
-               <button style={btnStyle} onClick={this.props.deleteTodo.bind(this, id)}>x</button>
-            </p>
+         <div className="input-group input-group-lg mb-3" style={this.getStyle()}>
+            <input style={{width: '30px', height: '30px'}} type="checkbox" aria-label="Checkbox for following text input" onChange={this.props.toggleComplete.bind(this, id)}/>
+            <p className="lead">{title}</p>
+            <button className="btn btn-danger ml-3 pb-3 pt-1" style={{height: '2rem', borderRadius: '20%'}} onClick={this.props.deleteTodo.bind(this, id)}>&times;</button>
          </div>
       );
    }
 }
 
-// Delete button style
-const btnStyle = {
-   background: '#ff0000',
-   color: '#fff',
-   border: 'none',
-   padding: '5px 9px',
-   borderRadius: '50%',
-   cursor: 'pointer',
-   float: 'right'
-};
 // PropTypes
 Todoitem.propTypes = {
    todo: PropTypes.object.isRequired
 };
-
-
 
 export default Todoitem;

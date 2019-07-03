@@ -11,7 +11,7 @@ class App extends Component {
          {
             title: 'Take out the trash',
             id: uuid.v4(),
-            completed: true
+            completed: false
          },
          {
             title: 'Get grocery',
@@ -57,11 +57,18 @@ class App extends Component {
 
    render() {
       return (
-         <div className="App">
-            <Header/>
-            <Todos todos={this.state.todos} toggleComplete={this.toggleComplete} deleteTodo={this.deleteTodo}/>
-            <br/>
-            <AddTodo addTodo={this.addTodo}/>
+         <div className="container">
+            <div className="row">
+               <div className="col-md-6 offset-md-3">
+                  <Header/>
+                  <br/>
+                  <div className="container bg-dark p-3">
+                     <Todos todos={this.state.todos} toggleComplete={this.toggleComplete} deleteTodo={this.deleteTodo}/>
+                     <br/>
+                     <AddTodo addTodo={this.addTodo}/>
+                  </div>
+               </div>
+            </div>
          </div>
       );
    }
