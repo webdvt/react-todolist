@@ -13,7 +13,7 @@ Here are the files we will be using during `Intro to React` meeting on 11/3/2019
 `cd react-todolist`
 4. Check out the `starter` branch with
 `git checkout starter`
-### How to run this locally?
+#### How to run this locally?
 
 1. ```npm install```
 2. ```npm start```
