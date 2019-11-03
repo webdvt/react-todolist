@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from "prop-types";
 
 const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
   const todoStyle = () => ({
     textDecoration: todo.completed ? 'line-through' : 'none',
     padding: '10px',
     borderBottom: '1px #ccc solid'
-
   });
 
   const { id, title } = todo;
@@ -20,12 +18,6 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
               onClick={() => deleteTodo(id)}>&times;</button>
     </div>
   );
-};
-
-TodoItem.propTypes = {
-  todo: PropTypes.object.isRequired,
-  deleteTodo: PropTypes.func.isRequired,
-  toggleComplete: PropTypes.func.isRequired
 };
 
 export default TodoItem;
