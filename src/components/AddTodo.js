@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 
-const AddTodo = ({ addTodo }) => {
-
-  const [newTodo, setNewTodo] = useState('');
+const AddTodo = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    addTodo(newTodo);
-    setNewTodo('');
-    e.target.reset();
   };
 
   return (
@@ -19,7 +14,6 @@ const AddTodo = ({ addTodo }) => {
           type="text"
           name="title"
           placeholder="Enter a Todo..."
-          onChange={(e) => setNewTodo(e.target.value)}
         />
       </div>
       <div className="form-group">

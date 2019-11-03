@@ -24,29 +24,16 @@ const App = () => {
     }
   ];
 
-  const [todos, updateTodos] = useState(initialTodos);
-
   const toggleComplete = (id) => {
-    updateTodos([...todos.map(todo => {
-        if (todo.id === id) {
-          todo.completed = !todo.completed;
-        }
-        return todo;
-      }
-    )]);
+    // ...
   };
 
   const deleteTodo = (id) => {
-    updateTodos(todos.filter(todo => todo.id !== id));
+    // ...
   };
 
   const addTodo = (title) => {
-    const newTodo = {
-      id: uuid.v4(),
-      title: title,
-      complete: false
-    };
-    updateTodos([...todos, newTodo]);
+    // ...
   };
 
   return (
@@ -56,9 +43,9 @@ const App = () => {
           <Header/>
           <br/>
           <div className="container bg-dark p-3">
-            <Todos todos={todos} toggleComplete={toggleComplete} deleteTodo={deleteTodo}/>
+            <Todos/>
             <br/>
-            <AddTodo addTodo={addTodo}/>
+            <AddTodo/>
           </div>
         </div>
       </div>
