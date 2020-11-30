@@ -3,7 +3,8 @@ import TodoItem from './TodoItem'
 
 const Todos = (props) => (
   <div>
-    <TodoItem/>
+    {/* Todo: use JS array map and render "todos" */}
+    <TodoItem /* Pass in JSX attributes: todo, key, toggleComplete, deleteTodo *//>
     <TodoItem/>
     <TodoItem/>
   </div>

@@ -5,33 +5,44 @@ import Header from './components/layout/Header';
 import './App.css';
 import uuid from 'uuid';
 
+const initialTodos = [
+  {
+    title: 'Take out the trash',
+    id: uuid.v4(),
+    completed: false
+  },
+  {
+    title: 'Get grocery',
+    id: uuid.v4(),
+    completed: false
+  },
+  {
+    title: 'Meeting with my adviser',
+    id: uuid.v4(),
+    completed: false
+  }
+];
+
 const App = () => {
-  const initialTodos = [
-    {
-      title: 'Take out the trash',
-      id: uuid.v4(),
-      completed: false
-    },
-    {
-      title: 'Get grocery',
-      id: uuid.v4(),
-      completed: false
-    },
-    {
-      title: 'Meeting with my adviser',
-      id: uuid.v4(),
-      completed: false
-    }
-  ];
+
+  // TODO: create "todos" state with useState() function.
 
   const toggleComplete = (id) => {
     // ...
   };
 
+  /**
+   * Remove the todo item with the "id"  using JS array filter.
+   * @param id
+   */
   const deleteTodo = (id) => {
     // ...
   };
 
+  /**
+   * Add a new todo.
+   * @param title
+   */
   const addTodo = (title) => {
     // ...
   };
@@ -43,9 +54,9 @@ const App = () => {
           <Header/>
           <br/>
           <div className="container bg-dark p-3">
-            <Todos/>
+            <Todos /* pass in JSX attribute: todos, toggleComplete, deleteTodo*/ />
             <br/>
-            <AddTodo/>
+            <AddTodo /* pass in JSX attribute: addTodo*/ />
           </div>
         </div>
       </div>
